@@ -41,18 +41,23 @@ class CurrencyTest < Minitest::Test
   def test_currency_can_not_be_added
     currency1 = Currency.new("USD", 1.50)
     currency2 = Currency.new("AUD", 1.50)
-    assert_equal(nil, (currency1 + currency2))
+    assert_equal(false, (currency1 + currency2))
+  end
+
+   #Tests that unlike country codes cannot be subtracted
+  def test_currency_can_not_be_added
+    currency1 = Currency.new("USD", 3.50)
+    currency2 = Currency.new("AUD", 1.50)
+    assert_equal(false, (currency1 - currency2))
   end
 end
+
+
+
+
       # assert(currency1 + currency2) return nil)
     # assert(currency1 != currency2)
   # end
-
-#Test that like currencies can be added
-
-  # DifferentCurrencyCodeError
-
-
 
 
 

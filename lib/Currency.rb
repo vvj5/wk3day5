@@ -16,24 +16,26 @@ class Currency
     end
 
     def +(other)
-      currency_amt = (self.amount + other.amount)
-      Currency.new(self.currency_code, currency_amt)
+      if other.is_a?(Currency)
+        if self.currency_code == other.currency_code
+        currency_amt = (self.amount + other.amount)
+        Currency.new(self.currency_code, currency_amt)
+        else return false
+        end
+      end
+    end
+
+    def -(other)
+      if other.is_a?(Currency)
+        if self.currency_code == other.currency_code
+        currency_amt = (self.amount - other.amount)
+        Currency.new(self.currency_code, currency_amt)
+        else return false
+        end
+      end
     end
 end
-    # def error_message
+    # def error_currency_code
     #   @error_message = error_message
-    #   puts "Cannot process request. Press y to try again."
+    #   puts "DifferentCurrencyCodeError"
     # end
-
-
-
-
-
-
-#   def ==(other)
-
-#     if other.is_a?(Currency) && other.code == @code
-#       return true
-#     else
-#       return false
-#     end
