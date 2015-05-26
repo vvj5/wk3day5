@@ -50,6 +50,20 @@ class CurrencyTest < Minitest::Test
     currency2 = Currency.new("AUD", 1.50)
     assert_equal(false, (currency1 - currency2))
   end
+
+#Tests that attempting to add unlike currencies returns error msg
+  def test_error_message_true
+    currency1 = Currency.new("USD", 1.50)
+    currency2 = Currency.new("AUD", 1.50)
+    sum = currency1 + currency2
+    assert_raise_with_message(sum, "DifferentCurrencyCodeError") do
+    raise "DifferentCurrencyCodeError"
+    end
+  end
+  #   currency1 = Currency.new("USD", 1.50)
+  #   currency2 = Currency.new("AUD", 1.50)
+  #   assert(@error_currency_code, currency1 + currency2)
+  # end
 end
 
 
