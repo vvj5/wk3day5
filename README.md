@@ -1,3 +1,14 @@
+This Program Can:
+
+-Create a Currency object with an amount and a currency code
+-Create a Currency object equal another Currency object with the same amount and currency code
+-Create a Currency object that does NOT equal another Currency object with different amount or currency code
+-Create a Currency object that can be added to another Currency object with the same currency code
+-Create a Currency object that can be subtracted by another Currency object with the same currency code
+
+*work in progress* Should raise a DifferentCurrencyCodeError when you try to add or subtract two Currency objects with different currency codes.
+
+
 This program, when complete, should be able to fulfill all of the requirements below.
 
 
